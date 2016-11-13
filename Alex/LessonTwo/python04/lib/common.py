@@ -23,7 +23,7 @@ def Exit():
 def MD5(password):
     '''
     加密函数
-    :param text: 密码字符串
+    :param firstsite: 密码字符串
     :return: 加密字符串
     '''
     import hashlib

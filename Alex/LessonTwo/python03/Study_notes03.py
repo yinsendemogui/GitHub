@@ -6,7 +6,7 @@
 # #函数的返回值
 # def sendmail():
 #     import smtplib
-#     from email.mine.text import MIMEText
+#     from email.mine.firstsite import MIMEText
 #     from email.utils import formataddr
 #     try:
 #         msg = MIMEText('邮件内容','plain','utf-8')

@@ -218,7 +218,7 @@ def User_registration():
 
 
 
-#def Log_Pretreatment(text)
+#def Log_Pretreatment(firstsite)
 
 
 
@@ -250,7 +250,7 @@ def Main(log = None):
                 '7': common.Exit
                 }
         choose = raw_input('请输入索引进行选择：')
-        print (choose)
+        # print (choose)
         if choose in Choose:
             Choose[choose]()
         else:
