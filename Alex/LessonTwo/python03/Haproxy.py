@@ -76,7 +76,7 @@ def Nginx_load_balancing_template() :
 
 
     listen  web_nginx 0.0.0.0:80
-            option httpchk GET /index.html
+            option httpchk GET /list.html
             balance {0} '''.format(polling)
 
     while TAG:

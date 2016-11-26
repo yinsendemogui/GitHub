@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://E:/Atomspace/.idea/Atomspace.iml" filepath="E:/Atomspace/.idea/Atomspace.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Atomspace/.idea/Atomspace.iml" filepath="$PROJECT_DIR$/Atomspace/.idea/Atomspace.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/pyhomework.iml" filepath="$PROJECT_DIR$/.idea/pyhomework.iml" />
       <module fileurl="file://E:/Atomspace/text/.idea/text.iml" filepath="E:/Atomspace/text/.idea/text.iml" />
     </modules>
