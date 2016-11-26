@@ -133,16 +133,15 @@
                             <img src="{% static 'images/avatar_hou.png' %}">
                         {% endif %}
                         <div class="Rectangle-7">
-                            {% if request.user.user_tickets.choice %}
-                            <span style="color: #698ebf;font-size:12px;font-weight: bold;">已赞</span>
-
-                            {% else %}
+                            {% if request.user.user_tickets.choice is not True %}
                             <form class="ui form" action="{% url 'vote' answer.id %}" method="post">
                                 <button  style="color: #698ebf;font-size:12px;font-weight: bold;"type="submit" name="vote" value="like">
                                     {{ answer.like_counts }}
                                 </button>
                                 {% csrf_token %}
                             </form>
+                            {% else %}
+                            <span style="color: #698ebf;font-size:12px;font-weight: bold;">已赞</span>
                             {% endif %}
                         </div>
                     </div>
@@ -158,7 +157,7 @@
                         </div>
 
                         <div class="description">
-                                <p style="font-size:13px;line-height:1.69;font-stretch: normal;">{{ answer.content|slice:'145'  }}
+                                <p style="font-size:13px;line-height:1.69;font-stretch: normal;">{{ answer.content }}
                                     <a href="{% url 'detail' answer.question.id %}" style="font-weight:bold;">显示全部</a></p>
                         </div>
 

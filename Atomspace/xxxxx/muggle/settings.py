@@ -121,3 +121,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/upload/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'upload').replace('//','/')
+AUTH_PROFILE_MODULE ='djangoadmin.myadmin.UserProfile'

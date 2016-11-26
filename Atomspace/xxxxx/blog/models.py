@@ -5,14 +5,19 @@ from django.contrib.auth import authenticate
 
 class UserProfile(models.Model):
     belong_to = models.OneToOneField(to=User, related_name='profile')
+
     # 用户姓名
     name = models.CharField(null=True, blank=True, max_length=14)
+
     # 用户邮箱
     email = models.EmailField(null=True)
+
     # 用户描述信息
-    desc = models.CharField(null=True, blank=True, max_length=250, default='未添加描述')
+    desc = models.CharField(null=True, blank=True, max_length=250)
+
     # 用户头像
-    avatar = models.ImageField(upload_to="avatars", null=True, blank=True)
+    avatar = models.ImageField(upload_to='avatars',default = "/static/images/avatar_hou.png")
+
 
     def __str__(self):
         return self.name
@@ -66,6 +71,8 @@ class Answer(models.Model):
 
     # 回答创建时间
     createtime = models.DateField(auto_now=True)
+    # def __str__(self):
+    #     return self.author
 
 
 class Comment(models.Model):
@@ -81,12 +88,7 @@ class Comment(models.Model):
     # 评论时间
     createtime = models.DateField(auto_now=True)
 
-
 class Ticket(models.Model):
-    '''
-    投票modes实现
-    autor：徐毅
-    '''
     voter = models.ForeignKey(to=User, related_name="user_tickets")
     answer_tickets = models.ForeignKey(to=Answer, related_name="answer_tickets")
 
