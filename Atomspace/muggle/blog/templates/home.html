@@ -127,10 +127,10 @@
                 {% for answer in answer_list %}
                 <div class="item">
                     <div class="ui small image" style="width:37px;height:37px;">
-                        {% if request.user.profile.avatar %}
-                        <img src="/upload/{{ request.user.profile.avatar }}">
+                        {% if answer.author.avatar %}
+                            <img src="/upload/{{ answer.author.avatar }}">
                         {% else %}
-                        <img src="{% static 'images/avatar_hou.png' %}">
+                            <img src="{% static 'images/avatar_hou.png' %}">
                         {% endif %}
                         <div class="Rectangle-7">
                             {% if request.user.user_tickets.choice is not True %}
@@ -209,25 +209,13 @@
                     <!--</a>-->
                 <!--{% endif %}-->
             </div>
+
         </div>
 
 
 
 
-        <!--结束部分-->
-        <div class="ui segment container-bottom">
-            <div class="ui three column grid" >
-                <div class="column">
-                    <span>Developed by Mugglecoding team 1队5组</span>
-                </div>
-                <div class="column" style="padding-left:100px;">
-                    <span>关于我们.加入我们.联系我们</span>
-                </div>
-                <div class="column" style="padding-left:200px;">
-                    <span style="200px;">京ICP备15047012号</span>
-                </div>
-            </div>
-        </div>
+
 
         <div class="ui modal">
             <!-- 页面标题栏 -->

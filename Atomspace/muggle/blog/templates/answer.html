@@ -127,8 +127,8 @@
             <div class="item">
               <div class="ui image">
                 <!--<img src="{% static 'images/avatar_yellow.png' %}" style="width:38px;height:38px">-->
-                {% if request.user.profile.avatar %}
-                <img src="/upload/{{ request.user.profile.avatar }}">
+                {% if question.author.avatar %}
+                <img src="/upload/{{ question.author.avatar }}">
                 {% else %}
                 <img src="{% static 'images/avatar_hou.png' %}">
                 {% endif %}
@@ -140,11 +140,11 @@
                 <span style="color:#BFBFBF">{{ question.createtime }}</span>
                 <div class="meta">
                   <span style="font-weight:bold;color:#000000;">{{ question.author }},</span>
-                  <span style="color:#BFBFBF">{{ question.author.desc }}...</span>
+                  <span style="color:#BFBFBF">{{ question.author.desc }}</span>
                 </div>
 
                 <div class="ui basic segment-p">
-                  <p style="line-height: 1.69;">{{ question.desc|slice:'145'  }} <a style="fort-size:12px;line-height:1.83">显示全部</a></p>
+                  <p style="line-height: 1.69;">{{ question.desc|slice:'145'  }}... <a style="fort-size:12px;line-height:1.83">显示全部</a></p>
                 </div>
                 <form class="ui form" action="{% url 'answer' %}" method="post">
                     <div class="extra">

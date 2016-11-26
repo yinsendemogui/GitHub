@@ -59,7 +59,7 @@ def answer(request,tag = 'False',id = 'False'):
 			return redirect(to='detail',question_id=question_id)
 		except:
 			pass
-	print(id)
+	# print(id)
 	topic_list = Topic.objects.all()
 	if len(topic_list) < 16:
 		context['topic_list'] = topic_list
@@ -78,9 +78,9 @@ def answer(request,tag = 'False',id = 'False'):
 		context['id'] = int(id)
 		topic_name = Topic.objects.get(id = int(id))
 		question_list = Question.objects.filter(answer_counts='0', topics = topic_name)
-	print(id)
+	# print(id)
 	context['question_list'] = question_list
-	print(question_list)
+	# print(question_list)
 	return render(request, "answer.html", context)
 
 
@@ -88,6 +88,9 @@ def answer(request,tag = 'False',id = 'False'):
 @Login_Check
 def detail(request, question_id):
 	context = {}
+
+	# if request.POST == 'GET':
+
 	return render(request, "detail.html", context)
 
 
@@ -107,7 +110,11 @@ def home(request):
 	'''
 	context = {}
 	answer_list = Answer.objects.all()
+	# profile_list =UserProfile.objects.all()
+	# for answer in answer_list:
+	# 	print (answer.author.avatar)
 	errors = ''
+
 	if request.method == 'GET':
 		form = QuestionForm
 	if request.method == 'POST':
@@ -140,6 +147,7 @@ def home(request):
 	context['form'] = form
 	context['errors'] = errors
 	context["answer_list"] = answer_list
+	# context["profile_list"] = profile_list
 	return render(request, "home.html", context)
 
 
