@@ -1,15 +1,16 @@
-from django.shortcuts import render, redirect
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 
+
+from django.shortcuts import render, redirect
 from homeworkapp.models import Article, Comment, Ticket,UserProfile
 from homeworkapp.forms import CommentForm,ProfileForm
-
 from django.core.paginator import Paginator
 from django.core.paginator import EmptyPage
 from django.core.paginator import PageNotAnInteger
 from django.core.exceptions import ObjectDoesNotExist
-
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreation,Form, AuthenticationForm
 from django.contrib.auth.models import User
 
 

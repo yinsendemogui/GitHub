@@ -1,3 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
 from django.shortcuts import render,redirect,HttpResponse
 from blog.models import UserProfile,Question,Topic,Answer,Ticket
 from blog.forms import LoginForm,RegisterForm,QuestionForm

@@ -1,3 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+
 from django.contrib import admin
 from blog.models import UserProfile, Topic, Question, Answer, Comment,Ticket
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
