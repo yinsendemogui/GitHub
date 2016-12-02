@@ -10,23 +10,23 @@ from django.contrib.auth import authenticate
 import re
 
 def email_validator(comment):
-    """
+    '''
     邮箱验证器
     author：陈思齐
     :param comment:
     :return:
-    """
+    '''
     if not '@' in comment:
         raise ValidationError(u"邮箱格式错误")
 
 
 def password_validator(comment):
-    """
+    '''
     密码验证器
     author：陈思齐
     :param comment:
     :return:
-    """
+    '''
     text = comment
     text = re.sub(u'\d+','',text)
     text = re.sub(u'[A-Za-z]+','',text)
@@ -37,12 +37,12 @@ def password_validator(comment):
 
 
 def name_validator(comment):
-    """
+    '''
     姓名验证器
     author：陈思齐
     :param comment:
     :return:
-    """
+    '''
     text = comment
     text = re.sub(u'[\u4e00-\u9fa5]+', '', text)
     text = re.sub(u'[A-Za-z]', '', text)
@@ -53,44 +53,44 @@ def name_validator(comment):
 
 
 def title_validator(comment):
-    """
+    '''
     问题题目验证器
     author：陈思齐
     :param comment:
     :return:
-    """
+    '''
     if len(comment) >= 50:
         raise ValidationError(u'请输入50个字符以内的问题')
 
 
 def desc_validator(comment):
-    """
+    '''
     问题内容验证器
     author：陈思齐
     :param comment:
     :return:
-    """
+    '''
     if len(comment) >= 1000:
         raise ValidationError(u'请输入1000个字符以内的问题')
 
 
 def topic_validator(comment):
-    """
+    '''
     话题题目验证器
     author：陈思齐
     :param comment:
     :return:
-    """
+    '''
     print (len(comment))
     if len(comment) >= 14:
         raise ValidationError(u'请输入14个字符以内的话题')
 
 
 class LoginForm(forms.Form):
-    """
+    '''
     登陆页表单
     author：陈思齐
-    """
+    '''
     # 用户邮箱
     email = forms.CharField(
         required=True,
@@ -128,10 +128,10 @@ class LoginForm(forms.Form):
 
 
 class RegisterForm(forms.Form):
-    """
+    '''
     注册页表单
     author：陈思齐
-    """
+    '''
     # 用户名
 
     name = forms.CharField(
@@ -170,10 +170,10 @@ class ProfileForm(forms.Form):
 
 
 class QuestionForm(forms.Form):
-    """
+    '''
     提问页表单
     author：陈思齐
-    """
+    '''
     # 问题题目
     title = forms.CharField(
         max_length=100,

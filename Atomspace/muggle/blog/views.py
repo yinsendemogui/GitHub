@@ -13,12 +13,12 @@ from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def Login_Check(f):
-    """
+    '''
     装饰器用于用户登录状态监控
     author：陈思齐
     :param func:对象
     :return:对象
-    """
+    '''
     def inner(request, *args, **kwargs):
         # print (request.user.username)
         if request.user.is_authenticated():
@@ -32,14 +32,14 @@ def Login_Check(f):
 
 @Login_Check
 def answer(request,tag = 'False',id = 'False'):
-    """
+    '''
     回答页逻辑实现
     author：陈思齐
     :param request:
     :param tag:
     :param id:
     :return:
-    """
+    '''
     context = {}
 
     if request.method == 'POST' :
@@ -98,7 +98,7 @@ def detail(request, question_id):
 
 @Login_Check
 def home(request):
-    """
+    '''
     提问页逻辑实现
     author：陈思齐
     :param request:
@@ -108,7 +108,7 @@ def home(request):
     author：徐毅
     :param request:
     :return:
-    """
+    '''
     context = {}
     answer_list = Answer.objects.all()
     # profile_list =UserProfile.objects.all()
@@ -155,12 +155,12 @@ def home(request):
 
 
 def Login(request):
-    """
+    '''
     用户登录界面逻辑实现
     author：陈思齐
     :param request:
     :return:
-    """
+    '''
     context = {}
     errors = ''
     if request.method == "GET":
@@ -188,12 +188,12 @@ def Login(request):
 
 @Login_Check
 def profile(request):
-    """
+    '''
     个人中心页逻辑实现
     author：C梦君（bbjoe）
     :param request:
     :return:
-    """
+    '''
     context = {}
     # 如果用户登录了的话
     try:
@@ -222,12 +222,12 @@ def profile(request):
 
 
 def register(request):
-    """
+    '''
     用户注册界面逻辑实现
     author：陈思齐
     :param request:
     :return:
-    """
+    '''
     context = {}
     errors = ''
     if request.method == "GET":
@@ -268,13 +268,13 @@ def search(request):
 
 
 def vote(request,id):
-    """
+    '''
     投票功能实现
     author：徐毅
     :param request:
     :param id:
     :return:
-    """
+    '''
     if request.user.is_authenticated():
         voter_id = request.user.id
         try:
