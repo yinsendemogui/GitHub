@@ -86,10 +86,10 @@ class Comment(models.Model):
 
 
 class Ticket(models.Model):
-    '''
+    """
     投票modes实现
     autor：徐毅
-    '''
+    """
     voter = models.ForeignKey(to=User, related_name="user_tickets")
     answer_tickets = models.ForeignKey(to=Answer, related_name="answer_tickets")
 
